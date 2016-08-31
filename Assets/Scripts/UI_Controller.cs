@@ -6,8 +6,14 @@ using UnityEngine.EventSystems;
 public class UI_Controller : MonoBehaviour {
 	public EventSystem LevelEventSystem;
 
+	private GameManager gameManager;
+
 	public static UI_Controller Current;
 
+	//Building to Spawn
+	public GameObject PrefabToSpawn;
+
+	//Resource Variables
 	public Text MoneyGained;
 	public Text ResearchGained;
 	public Text PowerGained;
@@ -15,6 +21,15 @@ public class UI_Controller : MonoBehaviour {
 	public Text StoragePercent;
 	public Slider StorageRepresentation;
 
+	//Building Description
+	public Text Description;
+	public Text Price;
+	public Text LifeTime_Heat;
+	public Text LifeTime_HeatAmount;
+	public Text Research_Heat;
+	public Text Research_HeatProduced;
+
+	public GameObject[] ActiveUI;
 
 	void Awake()
 	{
@@ -22,18 +37,18 @@ public class UI_Controller : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-	
+		gameManager = GameManager.Current.GetComponent<GameManager> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
-
-		MoneyGained.text = GameManager.Current.Money + " +" + GameManager.Current.MoneyGained;
-		ResearchGained.text = GameManager.Current.Research + " +" + GameManager.Current.ResearchGained;
-		PowerGained.text = GameManager.Current.CurrentPower + " +" + GameManager.Current.PowerGained;
-		MaxPower.text = GameManager.Current.MaxPower.ToString();
-		StoragePercent.text = GameManager.Current.StoragePercent + "%";
-		StorageRepresentation.value = GameManager.Current.StoragePercent;
+		// Set the resource Variables
+		MoneyGained.text = "$" + gameManager.Money.ToString("0.##") + " +" + gameManager.MoneyGained.ToString("0.##");
+		ResearchGained.text = gameManager.Research.ToString("0.##") + " +" + gameManager.ResearchGained.ToString("0.##");
+		PowerGained.text = gameManager.CurrentPower.ToString("0.##") + " +" + gameManager.PowerGained.ToString("0.##");
+		MaxPower.text = gameManager.MaxPower.ToString("0.##");
+		StoragePercent.text = gameManager.StoragePercent.ToString("0.##") + "%";
+		StorageRepresentation.value = gameManager.StoragePercent;
 
 	// Has the user clicked the primary mouse button
 		if (Input.GetMouseButtonDown (0)) 

@@ -4,14 +4,21 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 	public static GameManager Current;
 
-	public float Money = 1;
-	public float MoneyGained = 0;
-	public float Research = 0;
-	public float ResearchGained = 0;
-	public float CurrentPower = 0;
-	public float PowerGained = 0;
-	public float MaxPower = 50;
-	public float StoragePercent = 0;
+	public float TickInterval = 3f;
+
+	//Starting Resources
+	public float Money = 1f;
+	public float MoneyGained = 0f;
+	public float Research = 0f;
+	public float ResearchGained = 0f;
+	public float CurrentPower = 0f;
+	public float PowerGained = 0f;
+	public float MaxPower = 50f;
+	public float StoragePercent = 0f;
+
+	//Windmill Resource
+	public float WindmillPower;
+	public float WindmillLifetime;
 
 	void Awake()
 	{
@@ -19,13 +26,38 @@ public class GameManager : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
-		
-	
+	void Start () 
+	{
+		// Set the power gain at an interval
+		InvokeRepeating ("GainPower", 0.0f, TickInterval);
+
+		WindmillLifetime = WindMill.Current.Lifetime;
+		WindmillPower = WindMill.Current.GeneratedResource;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		StoragePercent = (CurrentPower / MaxPower) * 100;
+
+	}
+
+	public void GainPower()
+	{
+		if (CurrentPower > MaxPower) 
+		{
+			CurrentPower = MaxPower;
+			return;
+		}
+		else
+			CurrentPower += PowerGained;
+
+
+	}
+
+	public void SellPower()
+	{
+		Money += CurrentPower;
+		CurrentPower = 0;
 	}
 }

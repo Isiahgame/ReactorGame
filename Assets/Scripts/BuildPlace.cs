@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class BuildPlace : MonoBehaviour {
+
     // The block to be placed
     public GameObject AnchorPoint;
-    public GameObject PrefabToSpawn;
 
     private GameObject AttachedBuilding = null;
 
@@ -23,13 +23,12 @@ public class BuildPlace : MonoBehaviour {
     {
         if (AttachedBuilding != null)
         {
-            GameObject.Destroy(AttachedBuilding);
-            AttachedBuilding = null;
+			return;
         }
         else
         {
             // Spawn the new prefab
-            AttachedBuilding = GameObject.Instantiate(PrefabToSpawn);
+			AttachedBuilding = GameObject.Instantiate(UI_Controller.Current.PrefabToSpawn);
 
             //position the prefav at the anchor point
             AttachedBuilding.transform.position = AnchorPoint.transform.position;
