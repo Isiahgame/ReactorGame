@@ -27,12 +27,17 @@ public class BuildPlace : MonoBehaviour {
         }
         else
         {
-            // Spawn the new prefab
-			AttachedBuilding = GameObject.Instantiate(UI_Controller.Current.PrefabToSpawn);
+			if (GameManager.Current.moneyFix >=  UI_Controller.Current.Cost) {
 
-            //position the prefav at the anchor point
-            AttachedBuilding.transform.position = AnchorPoint.transform.position;
-            AttachedBuilding.transform.SetParent(AnchorPoint.transform);
+				// Spawn the new prefab
+				GameManager.Current.Money -= UI_Controller.Current.Cost;
+				AttachedBuilding = GameObject.Instantiate (UI_Controller.Current.PrefabToSpawn);
+
+				//position the prefav at the anchor point
+				AttachedBuilding.transform.position = AnchorPoint.transform.position;
+				AttachedBuilding.transform.SetParent (AnchorPoint.transform);
+			} else
+				Debug.Log ("Not enough money!");
 
         }
     }

@@ -5,7 +5,7 @@ public class BuildingButton : MonoBehaviour {
 	private UI_Controller UIController;
 	private GameManager gameManager;
 
-	public int cost;
+	public float cost;
 	public GameObject BuildingToSpawn;
 	public string Name_Description;
 	public string Lifetime_Heat;
@@ -32,6 +32,7 @@ public class BuildingButton : MonoBehaviour {
 		UIController.Price.text = "$" + cost.ToString();
 		UIController.LifeTime_Heat.text = Lifetime_Heat;
 		UIController.Research_Heat.text = Research_Heat;
+		UIController.Cost = cost;
 
 		if (BuildingToSpawn.name == ("Cube")) 
 		{

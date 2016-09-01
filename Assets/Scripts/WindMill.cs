@@ -6,7 +6,6 @@ public class WindMill : MonoBehaviour {
 
 	public static WindMill Current;
 
-	public float cost = 1;
 	public float GeneratedResource = 0.15f;
 	public float Lifetime = 600;
 
@@ -19,7 +18,7 @@ public class WindMill : MonoBehaviour {
 	void Start () {
 		gameManager = GameManager.Current.GetComponent<GameManager> ();
 		gameManager.PowerGained += GeneratedResource;
-		gameManager.Money -= cost;
+
 	}
 	
 	// Update is called once per frame

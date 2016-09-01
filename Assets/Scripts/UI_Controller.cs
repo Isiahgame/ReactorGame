@@ -12,6 +12,7 @@ public class UI_Controller : MonoBehaviour {
 
 	//Building to Spawn
 	public GameObject PrefabToSpawn;
+	public float Cost; 
 
 	//Resource Variables
 	public Text MoneyGained;
@@ -43,7 +44,7 @@ public class UI_Controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Set the resource Variables
-		MoneyGained.text = "$" + gameManager.Money.ToString("0.##") + " +" + gameManager.MoneyGained.ToString("0.##");
+		MoneyGained.text = "$" + gameManager.moneyFix.ToString("0.00") + " +" + gameManager.MoneyGained.ToString("0.##");
 		ResearchGained.text = gameManager.Research.ToString("0.##") + " +" + gameManager.ResearchGained.ToString("0.##");
 		PowerGained.text = gameManager.CurrentPower.ToString("0.##") + " +" + gameManager.PowerGained.ToString("0.##");
 		MaxPower.text = gameManager.MaxPower.ToString("0.##");
