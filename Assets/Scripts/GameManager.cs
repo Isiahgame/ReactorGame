@@ -20,11 +20,29 @@ public class GameManager : MonoBehaviour {
 	public float MaxPower = 50;
 	public float StoragePercent = 0;
 
+	//Windmill Properties
+	public float WindmillPower = 0.15f;
+	public float WindmillLifetime = 10;
 
+	//Office properties
+	public float OfficePowerSold = 10;
+	public float OfficeMaxHeat = 10;
+	public float OfficeTotalPower;
 
-	//Windmill Resource
-	public float WindmillPower;
-	public float WindmillLifetime;
+	//ResearchStation properties
+	public float ResearchstationHeat = 1;
+	public float ResearchStationProduction = 1;
+
+	//Battery properties
+	public float BatteryPowerGain = 100f;
+
+	//SolarPanel Properties
+	public float SolarPanelTicks = 100f;
+	public float SolarPanelHeat = 3;
+
+	//HeatConverterProperties
+	public float HeatConverterMaxHeat = 25;
+	public float HeatConvertion = 3;
 
 	void Awake()
 	{
@@ -34,13 +52,8 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
 		// Set the power gain at an interval
 		InvokeRepeating ("GainPower", 0.0f, TickInterval);
-
-		//convert frames into seconds
-		WindmillLifetime = WindMill.Current.Lifetime / 60;
-		WindmillPower = WindMill.Current.GeneratedResource;
 	}
 	
 	// Update is called once per frame
@@ -51,23 +64,26 @@ public class GameManager : MonoBehaviour {
 
 		//Convert power to a %
 		StoragePercent = (CurrentPower / MaxPower) * 100;
-	}
 
-	public void GainPower()
-	{
+		//If current power is more tahn maxpower dont allow it to increase more than maxpower
 		if (CurrentPower > MaxPower) 
 		{
 			CurrentPower = MaxPower;
 			return;
-		}
-		else
-			CurrentPower += PowerGained;
-
-
+		} 
 	}
+
+	public void GainPower()
+	{
+		//Increase power according to the powergained
+		CurrentPower += PowerGained;
+	}
+
+
 
 	public void SellPower()
 	{
+		//Sell the power on a button click
 		Money += CurrentPower;
 		CurrentPower = 0;
 	}

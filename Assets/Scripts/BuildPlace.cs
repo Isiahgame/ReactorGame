@@ -8,17 +8,6 @@ public class BuildPlace : MonoBehaviour {
 
     private GameObject AttachedBuilding = null;
 
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void ReactToMouseClick()
     {
         if (AttachedBuilding != null)
@@ -38,7 +27,17 @@ public class BuildPlace : MonoBehaviour {
 				AttachedBuilding.transform.SetParent (AnchorPoint.transform);
 			} else
 				Debug.Log ("Not enough money!");
-
         }
     }
+
+	public void DestroyTheObject()
+	{
+		if (AttachedBuilding != null)
+		{
+			//Remove the Object
+			GameObject.Destroy (AttachedBuilding);
+			AttachedBuilding = null;
+			return;
+		}
+	}
 }
