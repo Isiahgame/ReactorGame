@@ -11,6 +11,7 @@ public class Office : MonoBehaviour {
 	public float MaxHeat = 10;
 	public float CurrentHeat = 0;
 	public float PowerSold;
+	public float startingPowerSold;
 
 	void awake()
 	{
@@ -32,6 +33,9 @@ public class Office : MonoBehaviour {
 		//Check if building is overheating
 		if (CurrentHeat >= MaxHeat)
 			DestroyBuilding();
+
+		if (UpgradeManager.Current.OfficeLVl > UpgradeManager.Current.BaseLevel)
+			PowerSold = startingPowerSold * (100 * UpgradeManager.Current.OfficeLVl / 100);
 	}
 
 	public void DestroyBuilding()

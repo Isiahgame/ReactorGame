@@ -6,6 +6,7 @@ public class HeatGenerators : MonoBehaviour {
 
 	//properties
 	public float Lifetime = 6000;
+	public float startingLifetime = 6000;
 
 	void awake()
 	{
@@ -15,6 +16,9 @@ public class HeatGenerators : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		DestroyBuilding ();
+
+		if (UpgradeManager.Current.SolarLifeLVL > UpgradeManager.Current.BaseLevel)
+			Lifetime = startingLifetime * (50 * UpgradeManager.Current.SolarLifeLVL / 100);
 	}
 
 	public void DestroyBuilding()

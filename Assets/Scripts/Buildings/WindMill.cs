@@ -9,6 +9,8 @@ public class WindMill : MonoBehaviour {
 	//Properties
 	public float GeneratedResource = 0.15f;
 	public float Lifetime = 600;
+	public float startingLifetime = 600;
+	public float startingResource = 0.15f;
 
 	void awake()
 	{
@@ -25,6 +27,12 @@ public class WindMill : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		DestroyBuilding ();
+
+		if (UpgradeManager.Current.WindmillLifeLVL > UpgradeManager.Current.BaseLevel)
+			Lifetime = startingLifetime * (500 * UpgradeManager.Current.WindmillLifeLVL / 100);
+
+		if (UpgradeManager.Current.WindmillLvl > UpgradeManager.Current.BaseLevel)
+			GeneratedResource = startingResource * (25 * UpgradeManager.Current.WindmillLvl / 100);
 	}
 
 	public void DestroyBuilding()

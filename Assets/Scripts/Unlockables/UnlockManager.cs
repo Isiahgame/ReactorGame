@@ -36,6 +36,13 @@ public class UnlockManager : MonoBehaviour {
 		//set the unlockable upgrades to non visible
 		//make the researchstation icon non visible
 		ResearchStationUnlock [3].SetActive (false);
+		ResearchStationUnlock [4].SetActive (false);
+		ResearchStationUnlock [5].SetActive (false);
+		ResearchStationUnlock [6].SetActive (false);
+		ResearchStationUnlock [7].SetActive (false);
+		ResearchStationUnlock [8].SetActive (false);
+		ResearchStationUnlock [9].SetActive (false);
+		ResearchStationUnlock [10].SetActive (false);
 
 		BatteryUnlock [0].SetActive (false);
 		BatteryUnlock [1].SetActive (false);
@@ -44,6 +51,14 @@ public class UnlockManager : MonoBehaviour {
 		BatteryUnlock [4].SetActive (false);
 		BatteryUnlock [5].SetActive (false);
 		BatteryUnlock [6].SetActive (false);
+		BatteryUnlock [7].SetActive (false);
+		BatteryUnlock [8].SetActive (false);
+		BatteryUnlock [9].SetActive (false);
+		BatteryUnlock [10].SetActive (false);
+		BatteryUnlock [11].SetActive (false);
+		BatteryUnlock [12].SetActive (false);
+		BatteryUnlock [13].SetActive (false);
+
 
 		OfficeUnlock [0].SetActive (false);
 		OfficeUnlock [1].SetActive (false);
@@ -52,6 +67,13 @@ public class UnlockManager : MonoBehaviour {
 		OfficeUnlock [4].SetActive (false);
 		OfficeUnlock [5].SetActive (false);
 		OfficeUnlock [6].SetActive (false);
+		OfficeUnlock [7].SetActive (false);
+		OfficeUnlock [8].SetActive (false);
+		OfficeUnlock [9].SetActive (false);
+		OfficeUnlock [10].SetActive (false);
+		OfficeUnlock [11].SetActive (false);
+		OfficeUnlock [12].SetActive (false);
+		OfficeUnlock [13].SetActive (false);
 
 		AdvancedOfficeUnlock [0].SetActive (false);
 		AdvancedOfficeUnlock [1].SetActive (false);
@@ -69,6 +91,34 @@ public class UnlockManager : MonoBehaviour {
 		SolarPanelUnlock [5].SetActive (false);
 		SolarPanelUnlock [6].SetActive (false);
 		SolarPanelUnlock [7].SetActive (false);
+		SolarPanelUnlock [8].SetActive (false);
+		SolarPanelUnlock [9].SetActive (false);
+		SolarPanelUnlock [10].SetActive (false);
+		SolarPanelUnlock [11].SetActive (false);
+		SolarPanelUnlock [12].SetActive (false);
+		SolarPanelUnlock [13].SetActive (false);
+		SolarPanelUnlock [14].SetActive (false);
+		SolarPanelUnlock [15].SetActive (false);
+		SolarPanelUnlock [16].SetActive (false);
+		SolarPanelUnlock [17].SetActive (false);
+		SolarPanelUnlock [18].SetActive (false);
+		SolarPanelUnlock [19].SetActive (false);
+		SolarPanelUnlock [20].SetActive (false);
+		SolarPanelUnlock [21].SetActive (false);
+		SolarPanelUnlock [22].SetActive (false);
+		SolarPanelUnlock [23].SetActive (false);
+		SolarPanelUnlock [24].SetActive (false);
+		SolarPanelUnlock [25].SetActive (false);
+		SolarPanelUnlock [26].SetActive (false);
+		SolarPanelUnlock [27].SetActive (false);
+		SolarPanelUnlock [28].SetActive (false);
+		SolarPanelUnlock [29].SetActive (false);
+		SolarPanelUnlock [30].SetActive (false);
+		SolarPanelUnlock [31].SetActive (false);
+		SolarPanelUnlock [32].SetActive (false);
+		SolarPanelUnlock [33].SetActive (false);
+		SolarPanelUnlock [34].SetActive (false);
+		SolarPanelUnlock [35].SetActive (false);
 
 		SolarPanelManagerUnlock [0].SetActive (false);
 		SolarPanelManagerUnlock [1].SetActive (false);
@@ -100,6 +150,14 @@ public class UnlockManager : MonoBehaviour {
 			ResearchStationUnlock [1].SetActive (false);
 			ResearchStationUnlock [2].SetActive (false);
 			ResearchStationUnlock [3].SetActive (true);
+			ResearchStationUnlock [4].SetActive (true);
+			ResearchStationUnlock [5].SetActive (true);
+			ResearchStationUnlock [6].SetActive (true);
+			ResearchStationUnlock [7].SetActive (true);
+			ResearchStationUnlock [8].SetActive (true);
+			ResearchStationUnlock [9].SetActive (true);
+			ResearchStationUnlock [10].SetActive (true);
+
 
 			//reveal other researches
 			OfficeUnlock [0].SetActive (true);
@@ -108,6 +166,7 @@ public class UnlockManager : MonoBehaviour {
 			OfficeUnlock [3].SetActive (true);
 			OfficeUnlock [4].SetActive (true);
 			OfficeUnlock [5].SetActive (true);
+
 
 			WindmillManagerUnlock [0].SetActive (true);
 			WindmillManagerUnlock [1].SetActive (true);
@@ -139,6 +198,15 @@ public class UnlockManager : MonoBehaviour {
 			OfficeUnlock [4].SetActive (false);
 			OfficeUnlock [5].SetActive (false);
 			OfficeUnlock [6].SetActive (true);
+			OfficeUnlock [6].SetActive (true);
+			OfficeUnlock [7].SetActive (true);
+			OfficeUnlock [8].SetActive (true);
+			OfficeUnlock [9].SetActive (true);
+			OfficeUnlock [10].SetActive (true);
+			OfficeUnlock [11].SetActive (true);
+			OfficeUnlock [12].SetActive (true);
+			OfficeUnlock [13].SetActive (true);
+
 
 			AdvancedOfficeUnlock [0].SetActive (true);
 			AdvancedOfficeUnlock [1].SetActive (true);
@@ -187,6 +255,34 @@ public class UnlockManager : MonoBehaviour {
 			SolarPanelUnlock [5].SetActive (false);
 			SolarPanelUnlock [6].SetActive (true);
 			SolarPanelUnlock [7].SetActive (true);
+			SolarPanelUnlock [8].SetActive (true);
+			SolarPanelUnlock [9].SetActive (true);
+			SolarPanelUnlock [10].SetActive (true);
+			SolarPanelUnlock [11].SetActive (true);
+			SolarPanelUnlock [12].SetActive (true);
+			SolarPanelUnlock [13].SetActive (true);
+			SolarPanelUnlock [14].SetActive (true);
+			SolarPanelUnlock [15].SetActive (true);
+			SolarPanelUnlock [16].SetActive (true);
+			SolarPanelUnlock [17].SetActive (true);
+			SolarPanelUnlock [18].SetActive (true);
+			SolarPanelUnlock [19].SetActive (true);
+			SolarPanelUnlock [20].SetActive (true);
+			SolarPanelUnlock [21].SetActive (true);
+			SolarPanelUnlock [22].SetActive (true);
+			SolarPanelUnlock [23].SetActive (true);
+			SolarPanelUnlock [24].SetActive (true);
+			SolarPanelUnlock [25].SetActive (true);
+			SolarPanelUnlock [26].SetActive (true);
+			SolarPanelUnlock [27].SetActive (true);
+			SolarPanelUnlock [28].SetActive (true);
+			SolarPanelUnlock [29].SetActive (true);
+			SolarPanelUnlock [30].SetActive (true);
+			SolarPanelUnlock [31].SetActive (true);
+			SolarPanelUnlock [32].SetActive (true);
+			SolarPanelUnlock [33].SetActive (true);
+			SolarPanelUnlock [34].SetActive (true);
+			SolarPanelUnlock [35].SetActive (true);
 
 			SolarPanelManagerUnlock [0].SetActive (true);
 			SolarPanelManagerUnlock [1].SetActive (true);
@@ -227,6 +323,14 @@ public class UnlockManager : MonoBehaviour {
 			BatteryUnlock [4].SetActive (false);
 			BatteryUnlock [5].SetActive (false);
 			BatteryUnlock [6].SetActive (true);
+			BatteryUnlock [7].SetActive (true);
+			BatteryUnlock [8].SetActive (true);
+			BatteryUnlock [9].SetActive (true);
+			BatteryUnlock [10].SetActive (true);
+			BatteryUnlock [11].SetActive (true);
+			BatteryUnlock [12].SetActive (true);
+			BatteryUnlock [13].SetActive (true);
+
 
 
 			gameManager.Research -= BatteryCost;

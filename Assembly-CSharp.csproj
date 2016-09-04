@@ -46,16 +46,18 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BuildPlace.cs" />
-     <Compile Include="Assets\Scripts\BuildingButton.cs" />
      <Compile Include="Assets\Scripts\Buildings\Battery.cs" />
      <Compile Include="Assets\Scripts\Buildings\HeatConverter.cs" />
      <Compile Include="Assets\Scripts\Buildings\HeatGenerators.cs" />
      <Compile Include="Assets\Scripts\Buildings\Office.cs" />
      <Compile Include="Assets\Scripts\Buildings\ReseachStation.cs" />
      <Compile Include="Assets\Scripts\Buildings\WindMill.cs" />
-     <Compile Include="Assets\Scripts\BuyIsland.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\DisasterManager.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\UI\BuildingButton.cs" />
+     <Compile Include="Assets\Scripts\UI\BuyIsland.cs" />
+     <Compile Include="Assets\Scripts\UI\EndScreenButtons.cs" />
      <Compile Include="Assets\Scripts\UI_Controller.cs" />
      <Compile Include="Assets\Scripts\Unlockables\UnlockManager.cs" />
      <Compile Include="Assets\Scripts\Unlockables\UpgradeManager.cs" />

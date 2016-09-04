@@ -44,6 +44,13 @@ public class BuildingButton : MonoBehaviour {
 			UIController.Research_HeatProduced.text = gameManager.OfficePowerSold + " Power";
 		}
 
+		if (BuildingToSpawn.name == ("AdvancedOffice")) 
+		{
+			UIController.LifeTime_HeatAmount.text = gameManager.AOfficeMaxHeat.ToString ();
+			UIController.Research_HeatProduced.text = gameManager.AOfficePowerSold + " Power";
+		}
+
+
 		if (BuildingToSpawn.name == ("ResearchStation")) 
 		{
 			UIController.LifeTime_HeatAmount.text = gameManager.ResearchstationHeat.ToString ();

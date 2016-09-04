@@ -12,6 +12,7 @@ public class ReseachStation : MonoBehaviour {
 	public float CurrentHeat = 0;
 	public float MaxHeat = 1f;
 	public float Research = 1f;
+	public float startingResearch = 1;
 
 	void awake()
 	{
@@ -31,6 +32,8 @@ public class ReseachStation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (UpgradeManager.Current.ResearchLvl > UpgradeManager.Current.BaseLevel)
+			Research = startingResearch * (25 * UpgradeManager.Current.ResearchLvl / 100);
 	}
 
 	public void AddResearch()

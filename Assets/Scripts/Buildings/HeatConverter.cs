@@ -9,6 +9,9 @@ public class HeatConverter : MonoBehaviour {
 	public float CurrentHeat = 0f;
 	public float MaxHeat = 25f;
 
+	public float startingHeatconvertion = 3;
+	public float startingMaxHeat = 25;
+
 	// Use this for initialization
 	void Start () {
 		//Add power at an interval
@@ -21,6 +24,12 @@ public class HeatConverter : MonoBehaviour {
 	void Update () {
 		if (CurrentHeat >= MaxHeat)
 			Destroy(this.gameObject);
+
+		if (UpgradeManager.Current.GenHeatLVL > UpgradeManager.Current.BaseLevel)
+			MaxHeat = startingMaxHeat * (100 * UpgradeManager.Current.GenHeatLVL / 100);
+
+		if (UpgradeManager.Current.GenConversionLVL > UpgradeManager.Current.BaseLevel)
+			HeatConvertion = startingHeatconvertion * (100 * UpgradeManager.Current.GenConversionLVL / 100);
 	}
 
 	public void AddPower()
