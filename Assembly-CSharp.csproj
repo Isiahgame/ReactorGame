@@ -57,7 +57,6 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\UI_Controller.cs" />
-     <Compile Include="Assets\Scripts\Unlockables\ResearchUnlockable.cs" />
      <Compile Include="Assets\Scripts\Unlockables\UnlockManager.cs" />
      <Compile Include="Assets\Scripts\Unlockables\UpgradeManager.cs" />
  <Reference Include="UnityEngine.UI">
