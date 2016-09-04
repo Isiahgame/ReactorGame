@@ -11,6 +11,7 @@ public class WindMill : MonoBehaviour {
 	public float Lifetime = 600;
 	public float startingLifetime = 600;
 	public float startingResource = 0.15f;
+	public float timer;
 
 	void awake()
 	{
@@ -21,6 +22,7 @@ public class WindMill : MonoBehaviour {
 	void Start () {
 		gameManager = GameManager.Current.GetComponent<GameManager> ();
 		gameManager.PowerGained += GeneratedResource;
+		timer = Lifetime;
 
 	}
 	
@@ -38,11 +40,16 @@ public class WindMill : MonoBehaviour {
 	public void DestroyBuilding()
 	{
 		//check if the tiemr of the building is up
-		Lifetime -= Time.deltaTime;
+		timer -= Time.deltaTime;
 
-		if (Lifetime <= 0) {
-			//destroy the building
-			Destroy (this.gameObject);
+		if (timer <= 0) {
+			if (UnlockManager.Current.WindmillM == true)
+			{
+				timer = Lifetime;
+			}
+			else
+				//destroy the building
+				Destroy (this.gameObject);
 		}
 	}
 

@@ -7,11 +7,18 @@ public class HeatGenerators : MonoBehaviour {
 	//properties
 	public float Lifetime = 6000;
 	public float startingLifetime = 6000;
+	public float timer;
 
 	void awake()
 	{
 		Current = this;	
 	}
+
+	void Start ()
+	{
+		timer = Lifetime;
+	}
+
 
 	// Update is called once per frame
 	void Update () {
@@ -23,11 +30,16 @@ public class HeatGenerators : MonoBehaviour {
 
 	public void DestroyBuilding()
 	{
-		Lifetime -= Time.deltaTime;
+		timer -= Time.deltaTime;
 
-		if (Lifetime <= 0) 
+		if (timer <= 0) 
 		{
-			Destroy (this.gameObject);
+			if (UnlockManager.Current.SolarManager == true)
+			{
+				timer = Lifetime;
+			}
+			else
+				Destroy (this.gameObject);
 		}
 	}
 }

@@ -23,6 +23,9 @@ public class UnlockManager : MonoBehaviour {
 	public GameObject[] SolarPanelManagerUnlock;
 	public GameObject[] WindmillManagerUnlock;
 
+	public bool WindmillM = false;
+	public bool SolarManager = false;
+
 	void Awake()
 	{
 		Current = this;
@@ -239,6 +242,8 @@ public class UnlockManager : MonoBehaviour {
 			BatteryUnlock [4].SetActive (true);
 			BatteryUnlock [5].SetActive (true);
 
+			WindmillM = true;
+
 			gameManager.Research -= WindmillMCost;
 		}
 	}
@@ -291,6 +296,7 @@ public class UnlockManager : MonoBehaviour {
 			SolarPanelManagerUnlock [4].SetActive (true);
 			SolarPanelManagerUnlock [5].SetActive (true);
 
+			SolarManager = true;
 
 			gameManager.Research -= SolarPanelCost;
 		}
