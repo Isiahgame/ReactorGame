@@ -101,8 +101,9 @@ public class UpgradeManager : MonoBehaviour {
 	{
 		if (GameManager.Current.Money >= WindmillCost) 
 		{
-			//increase the level
-			WindmillLvl += BaseLevel;
+            GameManager.Current.Money -= WindmillCost;
+            //increase the level
+            WindmillLvl += BaseLevel;
 			//scale the costs with level
 			WindmillCost = WindmillCost * (90 * WindmillLvl / 100);
 		}
@@ -112,8 +113,9 @@ public class UpgradeManager : MonoBehaviour {
 	{
 		if (GameManager.Current.Money >= WindmillLifeCost) 
 		{
-			//increase the level
-			WindmillLifeLVL += BaseLevel;
+            GameManager.Current.Money -= WindmillLifeCost;
+            //increase the level
+            WindmillLifeLVL += BaseLevel;
 			//scale the costs with level
 			WindmillLifeCost = WindmillLifeCost * (90 * WindmillLifeLVL / 100);
 		}
@@ -123,8 +125,9 @@ public class UpgradeManager : MonoBehaviour {
 	{
 		if (GameManager.Current.Money >= OfficeCost) 
 		{
-			//increase the level
-			OfficeLVl+= BaseLevel;
+            GameManager.Current.Money -= OfficeCost;
+            //increase the level
+            OfficeLVl += BaseLevel;
 			//scale the costs with level
 			OfficeCost = OfficeCost * (90 * BatteryLVL / 100);
 		}
@@ -134,8 +137,9 @@ public class UpgradeManager : MonoBehaviour {
 	{
 		if (GameManager.Current.Money >= BatteryCost) 
 		{
-			//increase the level
-			BatteryLVL += BaseLevel;
+            GameManager.Current.Money -= BatteryCost;
+            //increase the level
+            BatteryLVL += BaseLevel;
 			//scale the costs with level
 			BatteryCost = BatteryCost * (90 * BatteryLVL / 100);
 		}
@@ -145,8 +149,9 @@ public class UpgradeManager : MonoBehaviour {
 	{
 		if (GameManager.Current.Money >= SolarHeatCost) 
 		{
-			//increase the level
-			SolarHeatLVL += BaseLevel;
+            GameManager.Current.Money -= SolarHeatCost;
+            //increase the level
+            SolarHeatLVL += BaseLevel;
 			//scale the costs with level
 			SolarHeatCost = SolarHeatCost * (90 * SolarHeatLVL / 100);
 		}
@@ -156,8 +161,9 @@ public class UpgradeManager : MonoBehaviour {
 	{
 		if (GameManager.Current.Money >= SolarLifeCost) 
 		{
-			//increase the level
-			SolarLifeLVL += BaseLevel;
+            GameManager.Current.Money -= SolarLifeCost;
+            //increase the level
+            SolarLifeLVL += BaseLevel;
 			//scale the costs with level
 			SolarLifeCost = SolarLifeCost * (90 * SolarLifeLVL / 100);
 		}
@@ -167,8 +173,9 @@ public class UpgradeManager : MonoBehaviour {
 	{
 		if (GameManager.Current.Money >= GenHeatCost) 
 		{
-			//increase the level
-			GenHeatLVL += BaseLevel;
+            GameManager.Current.Money -= GenHeatCost;
+            //increase the level
+            GenHeatLVL += BaseLevel;
 			//scale the costs with level
 			GenHeatCost = GenHeatCost * (90 * GenHeatLVL / 100);
 		}
@@ -178,8 +185,9 @@ public class UpgradeManager : MonoBehaviour {
 	{
 		if (GameManager.Current.Money >= GenConversionCost) 
 		{
-			//increase the level
-			GenConversionLVL+= BaseLevel;
+            GameManager.Current.Money -= GenConversionCost;
+            //increase the level
+            GenConversionLVL += BaseLevel;
 			//scale the costs with level
 			GenConversionCost = GenConversionCost * (90 * GenConversionLVL / 100);
 		}
@@ -189,8 +197,9 @@ public class UpgradeManager : MonoBehaviour {
 	{
 		if (GameManager.Current.Money >= ResearchCost) 
 		{
-			//increase the level
-			ResearchLvl+= BaseLevel;
+            GameManager.Current.Money -= ResearchCost;
+            //increase the level
+            ResearchLvl += BaseLevel;
 			//scale the costs with level
 			ResearchCost = ResearchCost * (90 * ResearchLvl / 100);
 		}

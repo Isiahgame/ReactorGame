@@ -72,12 +72,14 @@ public class GameManager : MonoBehaviour {
 		upgradeManager = UpgradeManager.Current.GetComponent<UpgradeManager> ();
 
 		// Set the power gain at an interval
-		InvokeRepeating ("GainPower", 0.0f, TickInterval);
+		//InvokeRepeating ("GainPower", 0.0f, TickInterval);
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+        GainPower();
+
 		if (moneyFix >= MoneyToWin)
 			SceneManager.LoadScene ("EndScreen");
 		
@@ -96,34 +98,34 @@ public class GameManager : MonoBehaviour {
 
 		//update the properties when the buildings level
 		if (upgradeManager.WindmillLvl > upgradeManager.BaseLevel)
-			WindmillPower = StartingWindmillPower * (25 * upgradeManager.WindmillLvl / 100);
+			WindmillPower = StartingWindmillPower + StartingWindmillPower * ((25 * upgradeManager.WindmillLvl) / 100);
 		
 		if (upgradeManager.WindmillLifeLVL > upgradeManager.BaseLevel)
-			WindmillLifetime = startingWindmillLifetime * (50 * upgradeManager.WindmillLifeLVL / 100);
+			WindmillLifetime = startingWindmillLifetime + startingWindmillLifetime * ((50 * upgradeManager.WindmillLifeLVL) / 100);
 
 		if (upgradeManager.OfficeLVl > upgradeManager.BaseLevel)
-			OfficePowerSold = startingOfficePowerSold * (100 * upgradeManager.OfficeLVl / 100);
+			OfficePowerSold = startingOfficePowerSold + startingOfficePowerSold * ((100 * upgradeManager.OfficeLVl) / 100);
 
 		if (upgradeManager.OfficeLVl > upgradeManager.BaseLevel)
-			AOfficePowerSold = startingAOfficePowerSold * (100 * upgradeManager.OfficeLVl / 100);
+			AOfficePowerSold = startingAOfficePowerSold + startingAOfficePowerSold * ((100 * upgradeManager.OfficeLVl) / 100);
 
 		if (upgradeManager.ResearchLvl > upgradeManager.BaseLevel)
-			ResearchStationProduction = startingResearchStationProduction * (25 * upgradeManager.ResearchLvl / 100);
+			ResearchStationProduction = startingResearchStationProduction + startingResearchStationProduction * ((25 * upgradeManager.ResearchLvl) / 100);
 
 		if (upgradeManager.SolarHeatLVL > upgradeManager.BaseLevel)
-			SolarPanelHeat = startingSolarPanelHeat * (25 * upgradeManager.SolarHeatLVL / 100);
+			SolarPanelHeat = startingSolarPanelHeat + startingSolarPanelHeat * ((25 * upgradeManager.SolarHeatLVL) / 100);
 
 		if (upgradeManager.SolarLifeLVL > upgradeManager.BaseLevel)
-			SolarPanelTicks = startingSolarPanelTicks * (50 * upgradeManager.SolarLifeLVL / 100);
+			SolarPanelTicks = startingSolarPanelTicks + startingSolarPanelTicks * ((50 * upgradeManager.SolarLifeLVL) / 100);
 
 		if (upgradeManager.GenConversionLVL > upgradeManager.BaseLevel)
-			HeatConvertion = startingHeatConvertion * (25 * upgradeManager.GenConversionLVL / 100);
+			HeatConvertion = startingHeatConvertion + startingHeatConvertion * ((25 * upgradeManager.GenConversionLVL) / 100);
 
 		if (upgradeManager.GenHeatLVL > upgradeManager.BaseLevel)
-			HeatConverterMaxHeat = startingHeatConverterMaxHeat * (100 * upgradeManager.GenHeatLVL / 100);
+			HeatConverterMaxHeat = startingHeatConverterMaxHeat + startingHeatConverterMaxHeat * ((100 * upgradeManager.GenHeatLVL) / 100);
 
 		if (upgradeManager.BatteryLVL > upgradeManager.BaseLevel)
-			BatteryPowerGain = startingBatteryPowerGain * (50 * upgradeManager.BatteryLVL / 100);
+			BatteryPowerGain = startingBatteryPowerGain + startingBatteryPowerGain * ((50 * upgradeManager.BatteryLVL) / 100);
 
 
 	}
@@ -131,7 +133,7 @@ public class GameManager : MonoBehaviour {
 	public void GainPower()
 	{
 		//Increase power according to the powergained
-		CurrentPower += PowerGained;
+		CurrentPower += PowerGained * Time.deltaTime;
 	}
 
 

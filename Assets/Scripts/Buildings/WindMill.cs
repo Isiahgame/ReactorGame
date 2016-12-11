@@ -21,8 +21,8 @@ public class WindMill : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameManager = GameManager.Current.GetComponent<GameManager> ();
-		gameManager.PowerGained += GeneratedResource;
-		timer = Lifetime;
+		gameManager.PowerGained += gameManager.WindmillPower;
+		timer = gameManager.WindmillLifetime;
 
 	}
 	
@@ -31,10 +31,10 @@ public class WindMill : MonoBehaviour {
 		DestroyBuilding ();
 
 		if (UpgradeManager.Current.WindmillLifeLVL > UpgradeManager.Current.BaseLevel)
-			Lifetime = startingLifetime * (500 * UpgradeManager.Current.WindmillLifeLVL / 100);
+			Lifetime = startingLifetime + startingLifetime * (500 * UpgradeManager.Current.WindmillLifeLVL / 100);
 
 		if (UpgradeManager.Current.WindmillLvl > UpgradeManager.Current.BaseLevel)
-			GeneratedResource = startingResource * (25 * UpgradeManager.Current.WindmillLvl / 100);
+			GeneratedResource = startingResource + startingResource * (25 * UpgradeManager.Current.WindmillLvl / 100);
 	}
 
 	public void DestroyBuilding()
@@ -46,6 +46,7 @@ public class WindMill : MonoBehaviour {
 			if (UnlockManager.Current.WindmillM == true)
 			{
 				timer = Lifetime;
+                gameManager.Money -= 1;
 			}
 			else
 				//destroy the building
