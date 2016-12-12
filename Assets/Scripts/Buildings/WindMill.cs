@@ -23,7 +23,7 @@ public class WindMill : MonoBehaviour {
 		gameManager = GameManager.Current.GetComponent<GameManager> ();
 		gameManager.PowerGained += gameManager.WindmillPower;
 		timer = gameManager.WindmillLifetime;
-
+        
 	}
 	
 	// Update is called once per frame
